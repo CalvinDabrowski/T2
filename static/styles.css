@@ -1,0 +1,24 @@
+body {
+    background-image: url('mars.jpg');
+  }
+
+h1{
+    color:red;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+h3{
+    color:red;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+a {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 30px;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;  
+    margin-left: -100px; 
+    position: fixed;     
+  }

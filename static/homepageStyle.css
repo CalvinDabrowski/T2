@@ -1,0 +1,16 @@
+
+body {
+  background-image: url('space.jpg');
+}
+a {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 30px;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;   /* = -height / 2   */
+    margin-left: -100px; /* = -width / 2    */
+    position: fixed;     /* Fixed is better */
+  }
