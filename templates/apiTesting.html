@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/vinStyle.css') }}" rel="stylesheet">
+    </head>
+<body>
+    <div class="search"style="float:left; padding-right:200;padding-bottom:4000;">
+        <h1>VIN Number Portal</h1>
+        <h3 id="vinInfo">{{vin}}</h3>
+        <form>
+            <label for="vin">VIN Number:</label>
+            <input type="text" id="vin" name="vin"><br><br>
+        </form>
+        <button onclick="changeURL()">Search VIN</button>
+        <p>After inputting a VIN number (must not exceed 17 characters; else your input will be truncated) select Search VIN to render the data.</p>
+    </div>
+    <div class="vinDesc">
+        <h2>{{model}}</h2>
+        <h3>{{manuf}}</h3>
+        <div id="mail">{{mail}}</div>
+    </div>
+<script>
+    function changeURL() {
+        var item = document.getElementById("vin").value;
+        var url = "/apiTesting/" + item;
+        var win = window.location.href= url;
+    }
+
+        var mail = document.getElementById("mail");
+        text = mail.textContent;
+        text = text.replaceAll('\'',"");
+        text = text.replaceAll("{","<b>");
+        text = text.replaceAll("}","");
+        text = text.replaceAll(":","</b> : ");
+        text = text.replaceAll(",","<b><br>");
+        text = text.replaceAll("}","");
+        mail.innerHTML = text;
+</script>
+</body>
+</html>
