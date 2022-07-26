@@ -15,6 +15,7 @@ templates   = Jinja2Templates(directory='templates')
 connection  = sqlite3.connect('db.sqlite')
 cursor      = connection.cursor()
 
+
 async def homepage(request):
     return templates.TemplateResponse('index.html', {'request': request}) 
 # homepage handler - applies index.html template to main page
@@ -79,5 +80,4 @@ async def getVIN(request : Request, vin : str):
     getSqlData(vinName)
     return templates.TemplateResponse('apiTesting.html', {'request': request, "vin" : vin[0:17], "mail" : tempDict, "model" : model, "manuf" : manuf})
 # gets a vin number from "vin", passes it thru .get, loads, dumps, and converts it into an array prior to being passed to the html
-0
 print("It's recommended you go to the following link:\nhttp://127.0.0.1:8000/")
